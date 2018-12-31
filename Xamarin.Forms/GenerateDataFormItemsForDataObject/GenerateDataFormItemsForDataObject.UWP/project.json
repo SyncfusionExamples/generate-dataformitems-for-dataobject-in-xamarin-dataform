@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.10",
     "Syncfusion.Xamarin.SfDataForm": "16.4.0.44",
     "Xamarin.Forms": "2.5.1.527436"
   },

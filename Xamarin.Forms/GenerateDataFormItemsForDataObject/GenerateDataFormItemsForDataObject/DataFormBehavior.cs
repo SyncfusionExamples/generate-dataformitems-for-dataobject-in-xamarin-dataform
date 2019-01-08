@@ -25,11 +25,10 @@ namespace GenerateDataFormItemsForDataObject
 
     public class DataFormItemManagerExt : DataFormItemManager
     {
-        SfDataForm dataform = new SfDataForm();
-        ContactsInfo a = new ContactsInfo();
+        SfDataForm sfDataForm;
         public DataFormItemManagerExt(SfDataForm dataForm) : base(dataForm)
         {
-            dataform = dataForm;
+            sfDataForm = dataForm;
         }
         protected override List<DataFormItemBase> GenerateDataFormItems(PropertyInfoCollection itemProperties, List<DataFormItemBase> dataFormItems)
         {
@@ -52,13 +51,13 @@ namespace GenerateDataFormItemsForDataObject
 
         public override object GetValue(DataFormItem dataFormItem)
         {
-            var value = dataform.DataObject.GetType().GetRuntimeProperty(dataFormItem.Name).GetValue(dataform.DataObject);
+            var value = sfDataForm.DataObject.GetType().GetRuntimeProperty(dataFormItem.Name).GetValue(sfDataForm.DataObject);
             return value;
         }
 
         public override void SetValue(DataFormItem dataFormItem, object value)
         {
-            dataform.DataObject.GetType().GetRuntimeProperty(dataFormItem.Name).SetValue(dataform.DataObject, value);
+            sfDataForm.DataObject.GetType().GetRuntimeProperty(dataFormItem.Name).SetValue(sfDataForm.DataObject, value);
         }
     }
 }
